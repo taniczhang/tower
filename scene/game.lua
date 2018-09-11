@@ -106,6 +106,7 @@ function scene:mousepressed(x, y, button, istouch)
    if button == 1 then -- 左键按下
 		for key, value in ipairs(spot_list) do  
 			local rx,ry,rw,rh = value.image:getRect()
+			rx,ry,rw,rh = rx*scaleX,ry*scaleY,rw*scaleX,rh*scaleY
 			if(x >= rx and y >=ry and x<=rx+rw and y <= ry+rh and not value.flag) then
 				value.flag = true
 				--初始化一台坦克

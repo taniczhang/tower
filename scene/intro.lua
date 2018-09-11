@@ -29,8 +29,8 @@ function scene:mousepressed(x, y, button)
  
 end
 
-function love.mousereleased(x, y, button)
-
+function scene:mousereleased(x, y, button)
+   gamestate.switch(gameState.game)
 end
 
 
