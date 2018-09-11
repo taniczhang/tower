@@ -2,7 +2,7 @@ Bullet = class()
 
 function Bullet:ctor(rad)
 	self.destoryed = false;
-	self.speed = 300
+	self.speed = 300*scaleX
 end
 
 function Bullet:setImage(image)
@@ -23,7 +23,7 @@ end
 
 function Bullet:draw()
 	love.graphics.setColor(255,255,255,255)
-	love.graphics.draw(self.image.resource,self.x,self.y,0,1,1,self.image.ax*self.image.width,self.image.ay*self.image.width)
+	love.graphics.draw(self.image.resource,self.x,self.y,0,scaleX,scaleY,self.image.ax*self.image.width,self.image.ay*self.image.width)
 	--love.graphics.line(self.x,self.y,self.maxX,self.maxY )
 end
 
@@ -44,6 +44,7 @@ function Bullet:update(dt)
 			value.currentBlood = value.currentBlood - 1
 			if value.currentBlood <= 0 then
 				value.currentBlood = 0
+				momey = momey+10
 				table.remove(self.emeryList,key)
 			end
 		end

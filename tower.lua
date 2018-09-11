@@ -5,8 +5,7 @@ Tower = class()
 function Tower:ctor()
 	self.trueRad = 0
 	self.rad = 0
-	self.shootSpeed = 0
-	self.radius = 130
+	self.radius = 130*scaleX
 	self.time = 0
 	self.delay = 0.25
 end
@@ -57,7 +56,7 @@ function Tower:update(dt)
 end
 
 function Tower:draw()
-	love.graphics.draw(self.image.resource,self.image.x,self.image.y,self.rad,1,1,self.image.ax*self.image.width,self.image.ay*self.image.width)
+	love.graphics.draw(self.image.resource,self.image.x,self.image.y,self.rad,scaleX,scaleY,self.image.ax*self.image.width,self.image.ay*self.image.width)
 	local x,y = self.image:getPosition()
 	love.graphics.circle("line", x, y, self.radius, 100) -- Draw white circle with 100 segments.
 end

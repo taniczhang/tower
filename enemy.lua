@@ -6,7 +6,7 @@ Enemy = class()
 function Enemy:ctor()
 	self.baseRad  = 180
 	self.rad = 180
-	self.speed = 100
+	self.speed = 100*scaleX
 	self.path = 1
 	self.destoryed = false
 	self.direct = 0
@@ -20,10 +20,10 @@ end
 
 function Enemy:draw()
 	love.graphics.setColor(255,255,255,255)
-	love.graphics.draw(self.image.resource,self.image.x,self.image.y,math.rad(self.rad),1,1,self.image.ax*self.image.width,self.image.ay*self.image.width)
+	love.graphics.draw(self.image.resource,self.image.x,self.image.y,math.rad(self.rad),scaleX,scaleY,self.image.ax*self.image.width,self.image.ay*self.image.width)
 	--血条
 	local lx,ly = self.image:getLeftPosition()
-	local length = 75
+	local length = 75*scaleX
 	local process = self.currentBlood/self.totalBlood
 	love.graphics.setColor(255,0,0,255)
 	love.graphics.rectangle("fill", lx + 10, ly + 10 , length, 6 )

@@ -1,14 +1,14 @@
 towerPosition = {
-	{x=80*2,y=241*2},
-	{x=170*2,y=241*2},
-	{x=260*2,y=241*2},
-	{x=350*2,y=241*2},
-	{x=125*2,y=149*2},
-	{x=215*2,y=149*2},
-	{x=305*2,y=149*2},
-	{x=395*2,y=149*2},
-	{x=80*2,y=55*2},
-	{x=170*2,y=55*2},
-	{x=260*2,y=55*2},
-	{x=350*2,y=55*2}
+	{x=(80*2+fixX)*scaleX,y=241*2*scaleY},
+	{x=(170*2+fixX)*scaleX,y=241*2*scaleY},
+	{x=(260*2+fixX)*scaleX,y=241*2*scaleY},
+	{x=(350*2+fixX)*scaleX,y=241*2*scaleY},
+	{x=(125*2+fixX)*scaleX,y=149*2*scaleY},
+	{x=(215*2+fixX)*scaleX,y=149*2*scaleY},
+	{x=(305*2+fixX)*scaleX,y=149*2*scaleY},
+	{x=(395*2+fixX)*scaleX,y=149*2*scaleY},
+	{x=(80*2+fixX)*scaleX,y=55*2*scaleY},
+	{x=(170*2+fixX)*scaleX,y=55*2*scaleY},
+	{x=(260*2+fixX)*scaleX,y=55*2*scaleY},
+	{x=(350*2+fixX)*scaleX,y=55*2*scaleY}
 }

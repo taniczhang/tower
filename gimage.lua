@@ -6,7 +6,7 @@ function GImage:ctor(res,x,y,anchor)
 	self.x = x
 	self.y = y
 	self.resource = res
-	self.width = self.resource:getData():getWidth()
+	self.width = self.resource:getData():getWidth() 
 	self.height = self.resource:getData():getHeight()
 	
 	if(anchor ~= nil) then
@@ -19,11 +19,11 @@ function GImage:ctor(res,x,y,anchor)
 end
 
 function GImage:draw ()
-   love.graphics.draw(self.resource,self.x,self.y,0,1,1,self.ax*self.width,self.ay*self.width)
+   love.graphics.draw(self.resource,self.x,self.y,0,scaleX,scaleY,self.ax*self.width,self.ay*self.height)
 end
 
 function GImage:getLeftPosition()
-   return self.x - self.ax*self.width, self.y - self.ay*self.width
+   return self.x - self.ax*self.width*scaleX, self.y - self.ay*self.height*scaleY
 end
 
 function GImage:getPosition()
@@ -31,7 +31,7 @@ function GImage:getPosition()
 end
 
 function GImage:getSize()
-   return self.width,self.height
+   return self.width*scaleX,self.height*scaleY
 end
 
 function GImage:getRect()

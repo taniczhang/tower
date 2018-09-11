@@ -2,10 +2,17 @@ path = string.sub(...,1,-5)
 
 gamestate= require (path.."hump/gamestate")
 mainFont = love.graphics.newFont("assets/xiheiti.ttf", 32)
-scaleX,scaleY = love.graphics.getWidth()/960, love.graphics.getHeight()/640
+--fix height
+scaleY = love.graphics.getHeight()/640
+
+scaleX = scaleY
+
+fixX = (love.graphics.getWidth()/scaleX - 960)/2
+
+print(fixX)
+
 function love.load()
-	local exists = love.filesystem.exists( "game.data" )
-	print(exists)
+	local exists = love.filesystem.exists("game.data")
 	if not exists then
 		file = love.filesystem.newFile("game.data","w")
 		file:close()
@@ -19,6 +26,7 @@ function love.load()
 	love.graphics.setFont(mainFont)
     gamestate.registerEvents()
     gamestate.switch(gameState.intro)
+	--love.graphics.scale(scaleX,1)
 end
 
 function love.update(dt) 
