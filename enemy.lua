@@ -69,7 +69,7 @@ function Enemy:update(dt)
 	self.rad = self.baseRad + rad;
 	
 	
-	if math.pow(self.image.y - road[self.path].y2, 2) + math.pow(self.image.x - road[self.path].x2, 2) < 2 then
+	if math.pow(self.image.y - road[self.path].y2, 2) + math.pow(self.image.x - road[self.path].x2, 2) < math.pow(2*scaleX,2) then
 		self.image.y = road[self.path].y2
 		self.image.x = road[self.path].x2
 		self.path = self.path + 1;

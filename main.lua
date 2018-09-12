@@ -9,7 +9,7 @@ scaleX = scaleY
 
 fixX = (love.graphics.getWidth()/scaleX - 960)/2
 
-print(fixX)
+--print(fixX)
 
 function love.load()
 	local exists = love.filesystem.exists("game.data")

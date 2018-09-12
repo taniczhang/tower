@@ -45,12 +45,10 @@ function scene:enter()
 		table.insert(enemy_list,#enemy_list+1,enemyOjb)
 	end,5) --最后一个参数为总波数 --]]
 	for key, value in ipairs(level1) do 
-	print("enter")
-	
 		local count = value.number
 		local iterval = value.iterval
 		local delay = value.delay
-		print(delay)
+		
 		gtimer.after(delay,function()
 			gtimer.every(iterval, function() 
 				local enemyImage = GImage.new(enemy_texture,road[1].x1,road[1].y1,{0.5,0.5}) --图片中心

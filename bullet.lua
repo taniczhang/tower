@@ -29,7 +29,7 @@ end
 
 function Bullet:update(dt)
 	--如果到了边缘
-	if(math.pow(self.x - self.maxX ,2) + math.pow(self.y - self.maxY ,2)) <= 2  then
+	if(math.pow(self.x - self.maxX ,2) + math.pow(self.y - self.maxY ,2)) <= math.pow(2*scaleX,2)  then
 		self.destoryed = true;
 		return false
 	end
@@ -39,7 +39,7 @@ function Bullet:update(dt)
 	for key, value in ipairs(self.emeryList) do  
 		local x2,y2 = value.image:getPosition()
 		
-		if (math.pow(x2-self.x,2) + math.pow(y2-self.y,2) <= 18*18) then
+		if (math.pow(x2-self.x,2) + math.pow(y2-self.y,2) <= math.pow(18*scaleX,2)) then
 			--print("hit emery")
 			value.currentBlood = value.currentBlood - 1
 			if value.currentBlood <= 0 then
